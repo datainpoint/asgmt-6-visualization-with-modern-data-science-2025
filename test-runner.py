@@ -3,7 +3,7 @@ import importlib
 import sqlite3
 import pandas as pd
 
-class TestAssignment(unittest.TestCase):
+class TestAssignmentSix(unittest.TestCase):
     def test_01(self):
         presidents_taipei_xlsx = asgmt.import_presidents_taipei_xlsx()
         self.assertEqual(len(presidents_taipei_xlsx.shape), 2)
@@ -85,7 +85,7 @@ class TestAssignment(unittest.TestCase):
             self.assertIn(v, elected.iloc[:, 3].values.tolist())
         
 asgmt = importlib.import_module("answers")
-suite = unittest.TestLoader().loadTestsFromTestCase(TestAssignment)
+suite = unittest.TestLoader().loadTestsFromTestCase(TestAssignmentSix)
 runner = unittest.TextTestRunner(verbosity=2)
 test_results = runner.run(suite)
 number_of_failures = len(test_results.failures)
